@@ -1,4 +1,5 @@
 import { Schema, model, models } from "mongoose";
+import { MongooseFindByReference } from "mongoose-find-by-reference";
 
 const PromptSchema = new Schema({
   creator: {
@@ -14,6 +15,8 @@ const PromptSchema = new Schema({
     required: [true, "Tag is required."],
   },
 });
+
+PromptSchema.plugin(MongooseFindByReference);
 
 const Prompt = models.Prompt || model("Prompt", PromptSchema);
 

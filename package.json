@@ -12,10 +12,12 @@
     "bcrypt": "^5.1.1",
     "mongodb": "^6.6.2",
     "mongoose": "^8.4.0",
+    "mongoose-find-by-reference": "^1.0.8",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "use-debounce": "^10.0.1"
   },
   "devDependencies": {
     "postcss": "^8",
