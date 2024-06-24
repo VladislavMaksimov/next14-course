@@ -3,8 +3,13 @@ import { useState, useEffect } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
 import PromptCardList from "./PromptCardList";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const Feed = () => {
+  const router = useRouter();
+  const { data: session } = useSession();
+
   const [searchText, setSearchText] = useState("");
   const [searchTag, setSearchTag] = useState("");
   const [posts, setPosts] = useState([]);
@@ -13,6 +18,14 @@ const Feed = () => {
     setSearchTag("");
     setSearchText(value);
   }, 500);
+
+  const handleProfileClick = (userId) => {
+    if (session?.user.id === userId) {
+      router.push("/profile");
+      return;
+    }
+    router.push(`/users/${userId}`);
+  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -58,6 +71,9 @@ const Feed = () => {
 
         <PromptCardList
           posts={posts}
+          profileClick={(userId) => {
+            handleProfileClick(userId);
+          }}
           handleTagClick={(tag) => {
             setSearchTag(tag);
           }}

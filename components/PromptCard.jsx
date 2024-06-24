@@ -8,7 +8,13 @@ import { usePathname } from "next/navigation";
 import tickSrc from "@assets/icons/tick.svg";
 import copySrc from "@assets/icons/copy.svg";
 
-const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+const PromptCard = ({
+  post,
+  profileClick,
+  handleTagClick,
+  handleEdit,
+  handleDelete,
+}) => {
   const { data: session } = useSession();
   const pathname = usePathname();
 
@@ -26,7 +32,12 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     <div className="prompt_card">
       <div className="flex-col justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
-          <div className="flex space-between items-center w-full">
+          <div
+            className="flex space-between items-center w-full"
+            onClick={() => {
+              profileClick(post.creator._id);
+            }}
+          >
             <Image
               src={post.creator.image}
               alt="user_image"
