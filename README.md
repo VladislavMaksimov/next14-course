@@ -1,36 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Course
 
-## Getting Started
+This small app is based on [the small course](https://youtu.be/wm5gMKuwSYk?si=0uVaaJnB51tbbI3g) of JavaScript Mastery. The lecturer wrote the most amount of code. I changed some components and constants' names, created a search by prompt name, tag, and prompt creator's name, wrote tag-clicking logic, and made users' profiles available for a user or a guest.
 
-First, run the development server:
+In fact, I don't like the code style and some solutions shown in the course. However, I decided not to rewrite the whole codebase because my goal wasn't to make the greatest project of all time but to learn some of the Next.js concepts such as App Router, API Routes, Metadata, etc.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Launch
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. `git clone https://github.com/VladislavMaksimov/next14-course.git`
+2. `npm i`
+3. Create `.env` file and initialize variables from `.env.example` in it.
+4. `npm run dev`
